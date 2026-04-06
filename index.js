@@ -378,7 +378,7 @@ async function body () {
                     const newDocRef = doc(db,"Gaming",documents.id)
 
                     console.log("unsup")
-                    if (data.Username === originalUsername || data.Username == null || !originalUsername) {
+                    if (data.Username === originalUsername || data.Username == null) {
                         await updateDoc(userDocRef, {
                             Username: newUsername
                         })
