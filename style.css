@@ -1,0 +1,628 @@
+* {
+    box-sizing: border-box;
+}
+html body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    background-color: black;
+    color: white;
+}
+
+
+/*Signup*/
+
+#main-signup-div {
+    color: white;
+    background: black;
+
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#signup-card-div {
+    border: 2px solid white;
+    background-color: #1C1B1F;
+
+    border-radius: 20px;
+    height: 35vh;
+    width: 30vw;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 20px #E53935, 0 0 40px #E53935, 0 0 60px #E53935;
+
+    transition: all 0.5s;
+}
+#signup-h1 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+
+    text-shadow: 4px 4px 7px #E53935;
+}
+#email-password-input {
+    border-radius: 20px;
+    height: 5vh;
+    width: 15vw;
+    padding: 10px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    border: 2px solid #E53935;
+    background: black;
+    color: white;
+
+    outline: none;
+}
+
+.buttons {
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+
+    background-color: #E53935;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+
+    transition: all 0.5s;
+
+    box-shadow: 0 0 20px #E53935, 0 0 40px #E53935, 0 0 60px #E53935;
+}
+
+#switch-to-login-button:hover {
+    background-color: #B71C1C;
+}
+#signup-confirm-button:hover {
+    background-color: #B71C1C;
+}
+
+#email-password-input.rotate {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+
+    color: black;
+}
+#email-password-input:focus {
+    border-color: #E53935; /* red border on focus */
+    box-shadow: 0 0 8px #E53935;
+}
+
+@keyframes rotate {
+    0%{
+
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*Login*/
+
+#main-login-div {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#email-password-input-login {
+    border-radius: 20px;
+    height: 5vh;
+    width: 15vw;
+    padding: 10px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    border: 2px solid #E53935;
+    background: black;
+    color: white;
+
+    outline: none;
+}
+#email-password-input-login:focus {
+    border-color: #E53935; /* red border on focus */
+    box-shadow: 0 0 8px #E53935;
+}
+#email-password-input-login.rotate {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+
+    color: black;
+}
+.buttons:hover {
+    background-color: #B71C1C;
+}
+
+/*Pages*/
+
+.middle-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;;
+    align-items: center;
+    margin: 0;
+}
+#topbar-container {
+    width: 90%;
+    margin: 0;
+    height: 5vh;
+    background-color: #2E2E3A;
+    border-radius: 20px;
+
+    display: flex;
+}
+#bottombar-container {
+    height: 5vh;
+    width: 100%;
+    background-color: #2E2E3A;
+    margin: 0;
+}
+#content-container {
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+
+    
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+#text-container {
+    width: 100%;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+#type-content {
+    background-color: black;
+    border: 2px solid #E53935;
+    border-radius: 20px;
+
+    margin-top: 1rem;
+
+    height: 6vh;
+    width: 60vw;
+
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+
+    outline: none;
+    padding: 10px;
+
+    box-shadow: 0 0 5px #E53935, 0 0 6px #E53935, 0 0 7px #E53935;
+}
+
+/*Text*/
+
+#main-text-div {
+    width: 100%;
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1rem;
+}
+#colored-div {
+    background-color: #1b1b23;
+    width: 80%;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+#upper-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+
+    background-color: #1E1E2F;
+    color: black;
+    outline: 2px solid #3B3B4D;
+}
+#name-profile-div {
+    display: flex;
+    color: black;
+    background-color: beige;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+#profile-div {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat ;
+    margin-top: 1rem;
+}   
+#content-label {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+
+    max-width: 60vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+#time-label {
+    color: white;
+}
+#name-label {
+    padding-left: 1rem;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+#time-delete-div {
+    display: flex;
+    padding: 20px;
+}
+#delete-button {
+    background-color: #E53935;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+
+    height: 2rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+#delete-button:hover {
+    background: #B71C1C;
+}
+
+/*Username*/
+
+#main-username-div {
+    height: 100vh;
+    width: 100%;
+}
+#username-card-div {
+    border: 2px solid #E53935;
+    border-radius: 20px;
+    padding: 10px;
+
+    height: 35vh;
+    width: 30vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#username-input {
+    border-radius: 20px;
+    border: 2px solid #B71C1C;
+
+    height: 4vh;
+    width: 15vw;
+
+    background: #2E2E3A;
+    color: white;
+
+    margin-bottom: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+#confirm-username-button {
+    border-radius: 20px;
+    height: 4vh;
+    width: 10vw;
+
+    background: #2E2E3A;
+    color: white;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+}
+
+/*Bottom Bar*/
+
+#bottombar {
+    display: flex;
+    margin: 0;
+
+    width: 100%;
+    height: 5vh;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#profile-image {
+    height: 40px;
+    width: 40px;
+
+    margin: 0;
+    margin-top: 0.6rem;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.1rem;
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 50%;
+}
+#profile-area {
+    display: flex;
+}
+#three-dots-button {
+    background-color: transparent;
+    border: none;
+
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    margin-right: 0.7rem;
+
+    background-image: url("threeDots.png");
+    background-size: cover;
+    background-position: center;
+
+    height: 30px;
+    width: 30px;
+
+    transition: all 0.5s;
+}
+#controls-div {
+    height: 40vh;
+    width: 10vw;
+
+    position: fixed;
+    right: 1%;
+    bottom: 10%;
+
+    background-color: #2E2E3A;
+    border-radius: 20px;
+    
+    transition: all 0.5s;
+    transform: scaleY(0);
+
+    border: 2px solid #1b1b23;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    /*animation-name: controls-div-animation;
+    animation-duration: 0.5s;*/
+}
+.control-buttons {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+
+    border: none;
+    background-color: transparent;
+    color: white;
+
+    padding: 5px;
+    border-radius: 20px;
+}
+.control-buttons:hover {
+    background-color: #1b1b23;
+}
+@keyframes controls-div-animation {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+/*Profile Div*/
+
+#main-profile-div {
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+
+    background-color: #1E1E2F;
+    flex-direction: column;
+
+    display: flex;
+    align-items: center;
+    
+}
+#profile-back-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+
+    background-color: #3B3B4D;
+    border: none;
+
+    border-radius: 5px;
+    color: white;
+
+    margin-top: 5rem;
+    border: 2px solid black;
+}
+#profile-card-div {
+    border: 2px solid #1b1b23;
+    height: 35vh;
+    width: 40vw;
+
+    background-color: black;
+    border-radius: 20px;
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+#main-profile-preview {
+    height: 10rem;
+    width: 10rem;
+
+    background-color: white;
+    background-image: url("user.png");
+    background-size: cover;
+    background-position: center;
+
+    margin-left: 2rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+#profile-control-div {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+#profile-control-input {
+    height: 4vh;
+    width: 20vw;
+
+    border-radius: 5px;
+    padding: 10px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+}
+#confirm-profile-button {
+    background: #E53935;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 20px;
+
+    margin-top: 1rem;
+    color: black;
+
+    height: 3.5vh;
+    width: 10vw;
+}
+#profile-total-div { /*This helps put the bottom Text*/
+    display: block;
+}
+#profile-h1 {
+    margin-top: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+}
+
+#confirm-profile-button:hover {
+    background-color: #B71C1C;
+}
+#profile-back-button:hover {
+    background-color: #1b1b23;
+}
+
+/*Topbar*/
+#topbar {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+#name-heading {
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+
+    transform: scaleY(0);
+    transition: all 0.5s;
+}
+.top-buttons {
+    margin: 0;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 200px;
+
+    height: 50px;
+    width: 50px;
+
+    padding: 0;
+    transition: all 0.5s;
+
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    background-size: cover;
+    background-position: center;
+
+    transform: scaleY(0);
+    transition: all 0.2s;
+
+}
+.activePFP {
+    margin-top: 0.5rem;
+    border: 4px solid #B71C1C;
+}
+#gaming-topbar-button {
+    background-image: url("");
+}
+#general-topbar-button {
+    background-image: url("");
+}
+
+.top-buttons:hover {
+    margin-top: 0.6rem;
+}
