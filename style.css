@@ -209,7 +209,7 @@ html body {
 }
 #type-content {
     background-color: black;
-    border: 2px solid #E53935;
+    border: 2px solid #2E2E3A;
     border-radius: 20px;
 
     margin-top: 1rem;
@@ -224,8 +224,8 @@ html body {
 
     outline: none;
     padding: 10px;
-
-    box-shadow: 0 0 5px #E53935, 0 0 6px #E53935, 0 0 7px #E53935;
+    
+    box-shadow: 0 0 5px #2E2E3A, 0 0 6px #2E2E3A, 0 0 7px #2E2E3A;
 }
 
 /*Text*/
@@ -239,6 +239,8 @@ html body {
     align-items: center;
 
     margin: 1rem;
+
+    animation: popIn 0.2s ease-out forwards
 }
 #colored-div {
     background-color: #1b1b23;
@@ -316,6 +318,24 @@ html body {
 
     margin-top: 1rem;
     margin-right: 1rem;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+        border-color: #3b82f6;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+        border-color: #3b82f6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        border-color: transparent;
+    }
 }
 
 #delete-button:hover {
@@ -625,4 +645,72 @@ html body {
 
 .top-buttons:hover {
     margin-top: 0.6rem;
+}
+
+/*Users Button*/
+
+#see-users-div {
+    position: fixed;
+    right: 1%;
+    bottom: 10%;
+    
+    width: 15vw;
+    background-color: #2E2E3A;
+    border-radius: 20px;
+
+    padding: 10px;
+    
+}
+#local-user-PFP {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+    border-radius: 20px;
+
+    background-size: cover;
+    background-position: center;
+}
+#local-user-div {
+    display: flex;
+    justify-items: space-between;
+    border-bottom: 2px solid black;
+}
+#local-username {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+}
+#local-close-div {
+    height: 1rem;
+    width: 100%;
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 10px;
+}
+#local-close-button {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    background-image: url("redCross.png");
+}
+#local-see-all-users-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    background-color: transparent;
+
+    text-decoration: underline;
+    text-decoration-color: #B71C1C;
+
 }

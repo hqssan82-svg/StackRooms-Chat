@@ -440,6 +440,69 @@ async function body () {
         changeProfileButton.onclick = () => {
             window.location.href = "changeProfile.html"
         }
+        seeUsersButton.onclick = () => {
+            threeDotsButton.click()
+            
+            const seeUsersDiv = document.createElement("div")
+            seeUsersDiv.id = "see-users-div"
+
+            const closeDiv = document.createElement("div")
+            const closeButton = document.createElement("button")
+            const seeAllUsersButton = document.createElement("button")
+
+            closeDiv.id = "local-close-div"
+            closeButton.id = "local-close-button"
+            seeAllUsersButton.id = "local-see-all-users-button"
+
+            seeAllUsersButton.textContent = "See All Users"
+
+            
+
+            closeDiv.appendChild(closeButton)
+            closeDiv.appendChild(seeAllUsersButton)
+            seeUsersDiv.appendChild(closeDiv)
+
+            emailSnapshots.forEach((userDoc)=> {
+                const userDiv = document.createElement("div") 
+                
+                const userProfilePicture = document.createElement("div")
+                const userName = document.createElement("h1")
+
+                let localPFP
+                localPFP = userDoc.data().Profile
+                let localUsername = userDoc.data().Username
+
+                if (!localPFP || localPFP == "Default") {
+                    console.log("there was a default")
+                    localPFP = "user.png"
+                }
+
+                userDiv.id = "local-user-div"
+                userProfilePicture.id = "local-user-PFP"
+                userName.id = "local-username"
+                
+
+                userProfilePicture.style.backgroundImage = `url('${localPFP}')`
+                console.log(localPFP)
+                userName.textContent = localUsername
+
+                
+                
+
+                userDiv.appendChild(userProfilePicture)
+                userDiv.appendChild(userName)
+                seeUsersDiv.appendChild(userDiv)
+            })
+            document.body.appendChild(seeUsersDiv)
+
+            closeButton.onclick = () => {
+                document.body.removeChild(seeUsersDiv)
+            }
+            seeAllUsersButton.onclick = () => {
+                window.location.href = "allUsers.html"
+            }
+
+        }
 
         threeDotsButton.onclick = () => {
             if (!threeDotsButtonRotate) {
