@@ -714,3 +714,8 @@ html body {
     text-decoration-color: #B71C1C;
 
 }
+@media only screen and (max-width: 480px) and (orientation: portrait) { 
+    #name-label {
+        font-size: 1rem;
+    }
+ }
