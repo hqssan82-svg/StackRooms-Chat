@@ -307,6 +307,11 @@ async function body () {
     }
     async function typingTexts () {
         const typearea = document.getElementById("type-content")
+        const sendTextButton = document.getElementById("send-text-button")
+        sendTextButton.onclick = () => {
+            addingTexts()
+            typearea.value = ""
+        }
         typearea.addEventListener("keydown",(e) => {
             if (e.code ==="Enter") {
                 addingTexts()

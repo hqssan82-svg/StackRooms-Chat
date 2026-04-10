@@ -227,6 +227,27 @@ html body {
     
     box-shadow: 0 0 5px #2E2E3A, 0 0 6px #2E2E3A, 0 0 7px #2E2E3A;
 }
+#inputs-container {
+    display: flex;
+}
+#send-text-button {
+    background-color: #3B3B4D;
+    border: none;
+    margin-left: 1rem;
+
+    height: 2rem;
+    width: 5rem;
+
+    color: white;
+    margin-top: 1.5rem;
+
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+#send-text-button:hover {
+    background: #141414;
+    border: 2px solid white;
+}
 
 /*Text*/
 
