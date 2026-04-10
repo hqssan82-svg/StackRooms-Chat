@@ -121,8 +121,6 @@ async function body () {
             addDoc(emailCollection, {
                         email : email
                     })
-
-
             
             emailPasswordInput.value= ""
             emailPasswordInput.placeholder = "Type In Your Password"
@@ -131,6 +129,9 @@ async function body () {
 
             confirmSignupButton.onclick = () => {
                 password = emailPasswordInput.value
+                if (password.length <= 6) {
+                    window.location.href = "signUp.html"
+                }
                 emailPasswordInput.value = ""
 
                 console.log(`Password is ${password}`)
@@ -271,6 +272,7 @@ async function body () {
             const usernameRN =await currentUsernameCheck()
 
             if (username === usernameRN) {
+                upperDiv.classList.add("my-text")
                 const deleteButton = document.createElement("button")
                 deleteButton.id = "delete-button"
                 deleteButton.textContent = "Delete"
@@ -605,7 +607,9 @@ async function body () {
             console.log(gamingProfile)
             
         
-        }
+    }
+    
+    /*@ Functionality */
     /*Side Control*/
 
     async function settingProfile () {

@@ -319,6 +319,9 @@ html body {
     margin-top: 1rem;
     margin-right: 1rem;
 }
+.my-text#upper-div{
+    background-color: #1C1B1F;
+}
 
 @keyframes popIn {
     0% {
@@ -785,8 +788,4 @@ html body {
     #name-label {
         font-size: 1rem;
     }
-}
-
-#dumbaklal {
-    color: beige;
 }
