@@ -298,6 +298,8 @@ html body {
     background-size: cover;
     background-repeat:no-repeat ;
     margin-top: 1rem;
+
+    flex-shrink: 0;
 }   
 #content-label {
     padding-left: 20px;
