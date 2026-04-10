@@ -331,6 +331,9 @@ async function body () {
             emailSnapshots.forEach((doc) => {
                 if (currentEmail == doc.data().email) {
                     const text = typearea.value
+                    if (text.length == 0) {
+                        return
+                    }
                     const time = new Date()
                     let currentProfilePicture = doc.data().Profile
                     if (currentProfilePicture === undefined || !currentProfilePicture) {
