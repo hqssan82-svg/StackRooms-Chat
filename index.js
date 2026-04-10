@@ -215,11 +215,7 @@ async function body () {
     }
     async function displayingTexts () {
         const contentContainer = document.getElementById("text-container")
-        setTimeout(()=> {
-            contentContainer.scrollTo({
-                        top: contentContainer.scrollHeight,behavior:"smooth"
-                    })
-        },1000)
+        
         onSnapshot(q, async(snapshot) => {
             contentContainer.innerHTML = ""
         for (const doc of snapshot.docs) {
@@ -233,7 +229,7 @@ async function body () {
             const timeLabel = document.createElement("h3")
             const timeDeleteDiv = document.createElement("div")
 
-            const text = doc.data().Content
+            const text = doc.data().Content.replace(/\/\//g, '\n')
             const username = doc.data().Username
             const timestamp = doc.data().Timestamp
             const profilePicture = doc.data().Profile
@@ -287,7 +283,15 @@ async function body () {
             }
             timeDeleteDiv.appendChild(timeLabel)
         }
+        let firstLoad = true
+        if (firstLoad) {
+            contentContainer.scrollTo({
+            top: contentContainer.scrollHeight, behavior: "smooth"
         })
+        firstLoad = false
+        }
+        })
+        
         function deleteText (textUid) {
             snapshots.forEach(async(docs) => {
                 if (docs.id == textUid) {
@@ -405,22 +409,26 @@ async function body () {
         const changeUsernameButton = document.createElement("button")
         const changeProfileButton = document.createElement("button")
         const seeUsersButton = document.createElement("button")
-        const contactOwnerButton = document.createElement("button")
+        const giveFeedbackButton = document.createElement("button")
+        const logOutButton = document.createElement("button")
 
         changeUsernameButton.textContent = "Change Username"
         changeProfileButton.textContent = "Change Profile"
         seeUsersButton.textContent = "Users"
-        contactOwnerButton.textContent="Contact Owner"
+        giveFeedbackButton.textContent="Give FeedBack"
+        logOutButton.textContent = "Log Out"
 
         changeUsernameButton.id = "change-username-button"
         changeProfileButton.id = "change-profile-button"
         seeUsersButton.id = "users-button"
-        contactOwnerButton.id = "contact-owner"
+        giveFeedbackButton.id = "give-feedback-button"
+        logOutButton.id = "log-out-button"
 
         changeUsernameButton.classList.add("control-buttons")
         changeProfileButton.classList.add("control-buttons")
         seeUsersButton.classList.add("control-buttons")
-        contactOwnerButton.classList.add("control-buttons")
+        giveFeedbackButton.classList.add("control-buttons")
+        logOutButton.classList.add("control-buttons")
 
         const controlsDiv = document.createElement("div")
         controlsDiv.id = "controls-div" 
@@ -430,7 +438,8 @@ async function body () {
         controlsDiv.appendChild(changeUsernameButton)
         controlsDiv.appendChild(changeProfileButton)
         controlsDiv.appendChild(seeUsersButton)
-        controlsDiv.appendChild(contactOwnerButton)
+        controlsDiv.appendChild(giveFeedbackButton)
+        controlsDiv.appendChild(logOutButton)
 
         /*Corner Buttons Functionality*/
 
@@ -455,8 +464,9 @@ async function body () {
             seeAllUsersButton.id = "local-see-all-users-button"
 
             seeAllUsersButton.textContent = "See All Users"
-
-            
+            seeAllUsersButton.onclick = () => {
+                window.location.href = "seeAllUsers.html"
+            }
 
             closeDiv.appendChild(closeButton)
             closeDiv.appendChild(seeAllUsersButton)
@@ -498,10 +508,10 @@ async function body () {
             closeButton.onclick = () => {
                 document.body.removeChild(seeUsersDiv)
             }
-            seeAllUsersButton.onclick = () => {
-                window.location.href = "allUsers.html"
-            }
 
+        }
+        logOutButton.onclick = () => {
+            signOut(auth)
         }
 
         threeDotsButton.onclick = () => {
@@ -688,6 +698,43 @@ async function body () {
         
         
     }
+    async function seeAllUsers() {
+        const usersSnapshot = await getDocs(emailCollection)
+        const usersDisplayDiv = document.getElementById("users-display-div")
+        const goBackButton = document.getElementById("go-back-button")
+
+        goBackButton.onclick = () => {
+            window.location.href = "gaming.html"
+        }
+        usersSnapshot.forEach((snapshot)=> {
+            const userData = snapshot.data()
+            let profileBackgroundImage = userData.Profile
+            
+            if (profileBackgroundImage == "Default" || !profileBackgroundImage) {
+                profileBackgroundImage = "user.png"
+            }
+            
+            const mainUserDiv =document.createElement("div")
+            const profileDiv = document.createElement("div")
+            const nameLabel = document.createElement("h1")
+
+            mainUserDiv.classList.add("main-user-div")
+            profileDiv.classList.add("main-profile-div")
+            nameLabel.classList.add("main-name-label")
+
+            profileDiv.style.backgroundImage = `url('${profileBackgroundImage}')`
+            nameLabel.textContent = userData.Username
+
+            mainUserDiv.appendChild(profileDiv)
+            mainUserDiv.appendChild(nameLabel)
+            usersDisplayDiv.appendChild(mainUserDiv)
+        }  
+        
+
+    )
+        
+        
+    }
 
     await loginCheck()
 
@@ -708,6 +755,9 @@ async function body () {
     }
     if (path.includes("changeProfile.html")) {
         settingProfile()
+    }
+    if (path.includes("seeAllUsers.html")) {
+        seeAllUsers()
     }
 }
 

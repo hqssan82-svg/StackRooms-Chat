@@ -6,7 +6,7 @@ html body {
     height: 100%;
     margin: 0;
 
-    background-color: black;
+    background-color: #141414;
     color: white;
 }
 
@@ -15,7 +15,7 @@ html body {
 
 #main-signup-div {
     color: white;
-    background: black;
+    background: #141414;
 
     width: 100%;
     height: 100vh;
@@ -63,7 +63,7 @@ html body {
     margin-bottom: 1rem;
 
     border: 2px solid #E53935;
-    background: black;
+    background: #141414;
     color: white;
 
     outline: none;
@@ -98,7 +98,7 @@ html body {
     animation-name: rotate;
     animation-duration: 0.5s;
 
-    color: black;
+    color: #141414;
 }
 #email-password-input:focus {
     border-color: #E53935; /* red border on focus */
@@ -141,7 +141,7 @@ html body {
     margin-bottom: 1rem;
 
     border: 2px solid #E53935;
-    background: black;
+    background: #141414;
     color: white;
 
     outline: none;
@@ -154,7 +154,7 @@ html body {
     animation-name: rotate;
     animation-duration: 0.5s;
 
-    color: black;
+    color: #141414;
 }
 .buttons:hover {
     background-color: #B71C1C;
@@ -208,7 +208,7 @@ html body {
     overflow-x: hidden;
 }
 #type-content {
-    background-color: black;
+    background-color: #141414;
     border: 2px solid #2E2E3A;
     border-radius: 20px;
 
@@ -232,7 +232,7 @@ html body {
 
 #main-text-div {
     width: 100%;
-    background: black;
+    background: #141414;
 
     display: flex;
     justify-content: center;
@@ -258,12 +258,12 @@ html body {
     border-radius: 20px;
 
     background-color: #1E1E2F;
-    color: black;
+    color: #141414;
     outline: 2px solid #3B3B4D;
 }
 #name-profile-div {
     display: flex;
-    color: black;
+    color: #141414;
     background-color: beige;
     padding-left: 10px;
     padding-right: 10px;
@@ -288,7 +288,7 @@ html body {
     max-width: 60vw;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    white-space: normal;
+    white-space: pre-wrap;
 }
 #time-label {
     color: white;
@@ -305,12 +305,12 @@ html body {
 #delete-button {
     background-color: #E53935;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
+    color: #141414;
     font-weight: bold;
     font-size: 1rem;
 
     height: 2rem;
-    border: 2px solid black;
+    border: 2px solid #141414;
     border-radius: 5px;
     
     padding-left: 10px;
@@ -479,6 +479,15 @@ html body {
 .control-buttons:hover {
     background-color: #1b1b23;
 }
+#log-out-button {
+    color: #8B0000;
+
+    text-shadow: 3px 2px 5px #8B0000;
+}
+#log-out-button:hover {
+    color :#E53935;
+}
+
 @keyframes controls-div-animation {
     0% {
         transform: scaleY(0);
@@ -513,14 +522,14 @@ html body {
     color: white;
 
     margin-top: 5rem;
-    border: 2px solid black;
+    border: 2px solid #141414;
 }
 #profile-card-div {
     border: 2px solid #1b1b23;
     height: 35vh;
     width: 40vw;
 
-    background-color: black;
+    background-color: #141414;
     border-radius: 20px;
     margin-top: 2rem;
 
@@ -570,7 +579,7 @@ html body {
     border-radius: 20px;
 
     margin-top: 1rem;
-    color: black;
+    color: #141414;
 
     height: 3.5vh;
     width: 10vw;
@@ -641,10 +650,11 @@ html body {
 }
 #general-topbar-button {
     background-image: url("");
+    margin-right: 1rem;
 }
 
 .top-buttons:hover {
-    margin-top: 0.6rem;
+    margin-top: 0.3rem;
 }
 
 /*Users Button*/
@@ -677,7 +687,7 @@ html body {
 #local-user-div {
     display: flex;
     justify-items: space-between;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #141414;
 }
 #local-username {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -714,8 +724,65 @@ html body {
     text-decoration-color: #B71C1C;
 
 }
+
+/*All Users*/
+
+#main-all-users-div {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+#users-display-div {
+
+    width: 100%;
+    height: 95vh;
+    margin-top: 5vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+    align-items: start;
+
+}
+#small-div {
+    height: 5vh;
+}
+.main-user-div {
+    background-color: #2E2E3A;
+    max-height: 40vh;
+    border-radius: 20px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+}
+.main-profile-div {
+    height: 7rem;
+    width: 7rem;
+    background-size: cover;
+    border-radius: 50%;
+
+    margin-right: 20px;
+}
+.main-name-label {
+    max-width: 10vw;
+}
+#go-back-button {
+    background-size: cover;
+    background-image: url("redCross.png");
+
+    height: 2rem;
+    width: 2rem;
+
+    background-color: #141414;
+    border: none;
+
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
 @media only screen and (max-width: 480px) and (orientation: portrait) { 
     #name-label {
         font-size: 1rem;
     }
- }
+}
