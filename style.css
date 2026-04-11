@@ -345,6 +345,17 @@ html body {
 .my-text#upper-div{
     background-color: #1C1B1F;
 }
+#colored-div.no-top {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    border: 2px solid #3B3B4D;
+    
+}
+#content-label.no-top {
+    margin-top: 2rem;
+}
 
 @keyframes popIn {
     0% {

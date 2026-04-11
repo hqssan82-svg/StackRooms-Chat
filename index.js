@@ -219,6 +219,7 @@ async function body () {
         
         onSnapshot(q, async(snapshot) => {
             contentContainer.innerHTML = ""
+            let prevUser
         for (const doc of snapshot.docs) {
             const mainTextDiv = document.createElement("div")
             const coloredDiv = document.createElement("div")
@@ -264,10 +265,22 @@ async function body () {
             upperDiv.appendChild(nameProfileDiv)
             
             upperDiv.appendChild(timeDeleteDiv)
-            coloredDiv.appendChild(upperDiv)
+
+            if (!prevUser || username !== prevUser) {
+                coloredDiv.appendChild(upperDiv)
+            }
+            
+            
             coloredDiv.appendChild(contentLabel)
             mainTextDiv.appendChild(coloredDiv)
             contentContainer.appendChild(mainTextDiv)
+
+            if (username == prevUser) {
+                coloredDiv.appendChild(timeDeleteDiv)
+                coloredDiv.classList.add("no-top")
+                contentLabel.classList.add("no-top")
+            }
+            prevUser = username
 
             const usernameRN =await currentUsernameCheck()
 
