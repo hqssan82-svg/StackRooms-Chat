@@ -844,6 +844,6 @@ html body {
         width: 40vw !important;
     }
     #content-container {
-        height: 85vh;
+        height: 85vh !important;
     }
 }
