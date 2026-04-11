@@ -828,5 +828,11 @@ html body {
     #time-delete-div {
         flex-direction: column !important;
     }
-
+    #time-label {
+        font-size: 0.5rem !important;
+    }
+    #delete-button {
+        font-size: 0.5rem !important;
+        height: 1rem !important;
+    }
 }
