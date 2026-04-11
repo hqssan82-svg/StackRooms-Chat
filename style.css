@@ -834,7 +834,7 @@ html body {
         font-size: 0.5rem !important;
     }
     #delete-button {
-        font-size: 0.5rem !important;
+        font-size: 0.5rem;
         height: 1rem !important;
     }
     #name-heading {
