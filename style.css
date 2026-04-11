@@ -834,5 +834,6 @@ html body {
     #delete-button {
         font-size: 0.5rem !important;
         height: 1rem !important;
+        width: 1.5rem !important;
     }
 }
