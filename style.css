@@ -684,10 +684,12 @@ html body {
 }
 #gaming-topbar-button {
     background-image: url("");
+    flex-shrink: 0;
 }
 #general-topbar-button {
     background-image: url("");
     margin-right: 1rem;
+    flex-shrink: 0;
 }
 
 .top-buttons:hover {
@@ -834,6 +836,9 @@ html body {
     #delete-button {
         font-size: 0.5rem !important;
         height: 1rem !important;
-        width: 1.5rem !important;
+        width: 3rem !important;
+    }
+    #name-heading {
+        font-size: 1rem !important;
     }
 }
