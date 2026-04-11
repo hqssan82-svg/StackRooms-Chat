@@ -189,8 +189,6 @@ html body {
     width: 100%;
     margin: 0;
 
-    
-
     display: flex;
     flex-direction: column;
 
@@ -844,5 +842,8 @@ html body {
     }
     #see-users-div {
         width: 40vw !important;
+    }
+    #content-container {
+        height: 85vh;
     }
 }
