@@ -839,6 +839,6 @@ html body {
         width: 3rem !important;
     }
     #name-heading {
-        font-size: 1rem !important;
+        font-size: 1rem !important; /*The last save did not work ??*/
     }
 }
