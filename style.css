@@ -843,6 +843,6 @@ html body {
         font-size: 1rem !important; /*The last save did not work ??*/
     }
     #see-users-div {
-        width: 40vw;
+        width: 40vw !important;
     }
 }
