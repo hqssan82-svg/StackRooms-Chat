@@ -675,7 +675,7 @@ html body {
     background-position: center;
 
     transform: scaleY(0);
-    transition: all 0.2s;
+    transition: all 0.3s;
 
 }
 .activePFP {
@@ -685,11 +685,13 @@ html body {
 #gaming-topbar-button {
     background-image: url("");
     flex-shrink: 0;
+    z-index: 999;
 }
 #general-topbar-button {
     background-image: url("");
     margin-right: 1rem;
     flex-shrink: 0;
+    z-index: 999;
 }
 
 .top-buttons:hover {
@@ -839,5 +841,8 @@ html body {
     }
     #name-heading {
         font-size: 1rem !important; /*The last save did not work ??*/
+    }
+    #see-users-div {
+        width: 40vw;
     }
 }
