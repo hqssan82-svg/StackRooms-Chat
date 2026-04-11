@@ -823,9 +823,10 @@ html body {
         font-size: 1rem;
     }
     #content-label {
-        font-size: 0.5rem;
+        font-size: 0.5rem !important;
     }
     #time-delete-div {
-        flex-direction: column;
+        flex-direction: column !important;
     }
+
 }
