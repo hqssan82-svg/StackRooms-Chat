@@ -220,6 +220,7 @@ async function body () {
         onSnapshot(q, async(snapshot) => {
             contentContainer.innerHTML = ""
             let prevUser
+            let firstLoad = true
         for (const doc of snapshot.docs) {
             const mainTextDiv = document.createElement("div")
             const coloredDiv = document.createElement("div")
@@ -298,7 +299,7 @@ async function body () {
             }
             timeDeleteDiv.appendChild(timeLabel)
         }
-        let firstLoad = true
+        
         if (firstLoad) {
             contentContainer.scrollTo({
             top: contentContainer.scrollHeight, behavior: "smooth"
@@ -393,7 +394,8 @@ async function body () {
                 usernameInput.value = "There Was A Mistake"
             }
             else {
-                usernameInput.value = "Doing Stuff..."
+                usernameInput.value = ""
+                usernameInput.placeholder = "Please Wait 5 mins ..."
                 if (userDocId) {
                 const userDocRef = doc(db, "Users", userDocId);
                 await updateDoc(userDocRef, { Username: newUsername });
@@ -719,7 +721,8 @@ async function body () {
                     })
                 }
             }
-            profileInput.value = "Changing Profile..."
+            profileInput.value = ""
+            profileInput.placeholder = "Please wait 5 mins..."
             setTimeout(()=> {
                 window.location.href = "gaming.html"
             },5000)
