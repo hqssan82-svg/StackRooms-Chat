@@ -118,9 +118,6 @@ async function body () {
             emailPasswordInput.classList.add("rotate")
             setTimeout(() => {emailPasswordInput.classList.remove("rotate")},500)
             email = emailPasswordInput.value
-            addDoc(emailCollection, {
-                        email : email
-                    })
             
             emailPasswordInput.value= ""
             emailPasswordInput.placeholder = "Type In Your Password"
@@ -138,6 +135,9 @@ async function body () {
 
                 createUserWithEmailAndPassword(auth,email,password)
                 .then(async(userCredential) => {
+                    addDoc(emailCollection, {
+                        email : email
+                    })
                     emailPasswordInput.value = "Logging In .."
                     setTimeout(() => {emailPasswordInput.value = "Logging In..."},500)
                     console.log(userCredential.user.email)
@@ -508,6 +508,10 @@ async function body () {
                 localPFP = userDoc.data().Profile
                 let localUsername = userDoc.data().Username
 
+                if (!localUsername) {
+                    return
+                }
+
                 if (!localPFP || localPFP == "Default") {
                     console.log("there was a default")
                     localPFP = "user.png"
@@ -750,8 +754,13 @@ async function body () {
             profileDiv.classList.add("main-profile-div")
             nameLabel.classList.add("main-name-label")
 
+            const everyUsername = userData.Username
+            if (!everyUsername) {
+                return
+            }
+
             profileDiv.style.backgroundImage = `url('${profileBackgroundImage}')`
-            nameLabel.textContent = userData.Username
+            nameLabel.textContent = everyUsername
 
             mainUserDiv.appendChild(profileDiv)
             mainUserDiv.appendChild(nameLabel)
