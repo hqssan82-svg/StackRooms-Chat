@@ -466,6 +466,9 @@ async function body () {
 
         /*Corner Buttons Functionality*/
 
+        giveFeedbackButton.onclick = () => {
+            window.location.href = "giveFeedback.html"
+        }
         changeUsernameButton.onclick = () => {
             window.location.href = "setUsername.html"
         }
@@ -760,6 +763,12 @@ async function body () {
         
         
     }
+    async function giveFeedback() {
+        const feedbackGoBackButton = document.getElementById("feedback-go-back-button")
+        feedbackGoBackButton.onclick = () => {
+            window.location.href = "gaming.html"
+        }
+    }
 
     await loginCheck()
 
@@ -783,6 +792,9 @@ async function body () {
     }
     if (path.includes("seeAllUsers.html")) {
         seeAllUsers()
+    }
+    if (path.includes("giveFeedback.html")) {
+        await giveFeedback()
     }
 }
 
