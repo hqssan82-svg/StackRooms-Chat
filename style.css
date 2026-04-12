@@ -886,8 +886,22 @@ html body {
 
 
 @media only screen and (max-width: 480px) { 
+    
+    #signup-card-div,#username-card-div {
+        width: 85vw !important;
+        height: auto !important;
+        padding: 2rem !important;
+    } 
+    #email-password-input,#email-password-input-login,#username-input {
+        width: 70vw !important;
+        font-size: 1rem !important;
+    }
+    #text-container {
+        height: 75vh !important;
+        padding-bottom: 10vh !important; /* room for fixed input bar */
+    }
     #name-label {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
     #content-label {
         font-size: 1rem !important;
