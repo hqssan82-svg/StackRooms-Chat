@@ -189,7 +189,7 @@ html body {
 
 }
 #content-container {
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     margin: 0;
 
@@ -231,6 +231,9 @@ html body {
 }
 #inputs-container {
     display: flex;
+
+    position: fixed;
+    bottom: 6vh;
 }
 #send-text-button {
     background-color: #3B3B4D;
