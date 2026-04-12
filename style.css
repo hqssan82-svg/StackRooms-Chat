@@ -911,4 +911,7 @@ html body {
     #controls-div {
         width: 60vw !important;
     }
+    #inputs-container {
+        margin-bottom: 5vh;
+    }
 }
