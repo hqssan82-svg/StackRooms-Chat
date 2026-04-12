@@ -909,12 +909,9 @@ html body {
         width:50vw !important;
     }
     #content-container {
-        height: 85vh !important;
+        height: 80vh !important;
     }
     #controls-div {
         width: 60vw !important;
-    }
-    #inputs-container {
-        margin-bottom: 5vh;
     }
 }
