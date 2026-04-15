@@ -23,11 +23,17 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
-
+let q
 const db = getFirestore(app)
-const q = query(collection(db, "Gaming"),orderBy("Timestamp","asc"))
-const emailCollection = await collection(db,"Users")
 
+const path = window.location.pathname
+ q = query(collection(db, "Gaming"),orderBy("Timestamp","asc"))
+
+if (path.includes("general.html")) {
+        q = query(collection(db, "General"),orderBy("Timestamp","asc"))
+}
+
+const emailCollection = await collection(db,"Users")
 
 let emailSnapshots = []
 let snapshots = []
@@ -43,8 +49,6 @@ onSnapshot(q,async () => {
 snapshots.forEach((doc) => {
     console.log(doc.data().Content)
 })
-
-const path = window.location.pathname
 
 async function currentUsernameCheck () {
     while (emailSnapshots.length === 0) {
@@ -311,7 +315,13 @@ async function body () {
         function deleteText (textUid) {
             snapshots.forEach(async(docs) => {
                 if (docs.id == textUid) {
-                    const docRef = doc(db,"Gaming",docs.id)
+                    let docRef
+                    if (path.includes("general.html")) {
+                        docRef = doc(db,"General",docs.id)
+                    }
+                    else {
+                        docRef = doc(db,"Gaming",docs.id)
+                    }
                     setTimeout(()=> {})
                     await deleteDoc(docRef)
                 }
@@ -354,14 +364,24 @@ async function body () {
                         currentProfilePicture = "Default"
                     }
 
-
-                    addDoc(collection(db,"Gaming"), {
+                    if (path.includes("general.html")) {
+                        addDoc(collection(db,"General"), {
                         Username: currentUsername,
                         Content : text,
                         Timestamp : time,
                         Profile : currentProfilePicture
+                    })
                     }
-                )
+                    else {
+                        addDoc(collection(db,"Gaming"), {
+                        Username: currentUsername,
+                        Content : text,
+                        Timestamp : time,
+                        Profile : currentProfilePicture
+                    })
+                    }
+                    
+                        
                 }
             })
 
@@ -627,6 +647,12 @@ async function body () {
                     generalTopbarButton.style.backgroundImage = `url('${gamingProfile}')`
                 }
             })
+            generalTopbarButton.onclick = () => {
+                window.location.href = "general.html"
+            }
+            gamingTopbarButton.onclick = () => {
+                window.location.href = "gaming.html"
+            }
             setTimeout(()=> {
                 nameHeading.style.transform = "ScaleY(1)"
 
@@ -790,7 +816,7 @@ async function body () {
     if (path.includes("login.html")) {
         await login()
     }
-    if (path.includes("gaming.html")) {
+    if (path.includes("gaming.html") || path.includes("general.html")) {
         await displayingTexts()
         await typingTexts()
         await fetchingBottomBar()
